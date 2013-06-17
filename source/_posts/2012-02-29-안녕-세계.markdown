@@ -1,0 +1,35 @@
+---
+layout: post
+title: "안녕 세계"
+date: 2012-02-29 00:36
+comments: true
+categories: [this blog, personal]
+---
+Wait... are you asking *"what are those characters?"*
+Well, that's supposed to be "Hello world" in korean, I jut put it there to test unicode url in my brand new blog :D
+
+...and yes: obviously, this is my first post, and since I somewhat like the korean alphabet, I found that using that as the title was somewhat fitting :)
+
+This is not really noticeable from this very very simple page, but I actually spent quite a bit of time on the backend. It's still missing styles, rss, a working pagination, javascript goodness and a bunch of things... but at least now the basics of the blog are there, I can start writing content, and then I'll just integrate the missing features (you know... [minimum viable product](http://en.wikipedia.org/wiki/Minimum_viable_product) :P)
+
+Also: for now I'm using a crappy .co.cc domain, but as soon as I'll be able to host something meaningful here, I think I'll switch to something better
+
+It's been more than 3 years since I first had the idea of running my own blog, why did it take so long?
+
+Well... aside from my usual procrastination problem, this is due to the fact that I decided to create it from scratch, and I decided to impose on myself some very weird requirements
+
+Like the ability to automatically redirect the urls when an user does a typo, or keeping semi-automatically an image of my mug for each post (a bit narcissistic, but this way I hope to preserve a log of the mood in which I was when writing these posts, and in the long term I'll be able to see how I changed... like in those fancy timelapse videos)
+
+For now, I'm also hosting this directly on my home internet connection on a Debian squeeze, running on arm (and I had quite a bit of problems with my hardware setup, but I think I'll write about it in another post)
+
+So, I'll progressively add more info about myself, what I'm working on, what I find interesting, and possibly my unrequested opinion on the issue du jour :P
+
+I'm writing all of this in english, and I plan to refrain altogether to write in my native language (Italian) for several reasons: 
+
+- Most of the content on the internet is in english, and it has a bigger audience.
+- People who restrict themselves only to their native language imho are crippling their access to knowledge... in particular, in the IT field, being proficent in it is almost a must, and I think that if you have the possibility to directly engage with the english-speaking world/community/whatever you should do so. You could say I'm doing it out of a personal principle.
+- I'm planning on making a life abroad... sticking to my native language doesn't make sense.
+- The only things for which speaking to a strictly italian audience may make sense is for internal politics topics or similar issues, but given the sheer idiocy of the current state of italian society, I think it's better to ingnore all of that and work on what we can actually improve.
+- Obviously, also to get the hang to write some somewhat long prose in english (I don't really have problems communicating, but I'm not really fluent: I periodically stop to think for the best word to use, and I also think that when writing I just structure too many sentences in first singular person form, and split the text in an ugly and self-centered way, native english people probably find my writing style childish and less clear to follow).
+
+This last point, will apply only if I'll be able to keep up with this habit :D We'll see.
