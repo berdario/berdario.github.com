@@ -9,7 +9,7 @@
   <meta name="author" content="Dario Bertini">
 
   
-  <meta name="description" content=" Blog Archives Recent Posts ">
+  <meta name="description" content="A lot of time passed since my last post&hellip; In fact it has been almost precisely a year since when I tried to write my 3rd blog post, but to my &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -50,8 +50,6 @@
   <header role="banner"><hgroup>
   <h1><a href="/">Dario's coredump</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
-  
 </hgroup>
 
 </header>
@@ -78,6 +76,253 @@
       <div class="blog-index">
   
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/17/back-to-sanity/">Back to Sanity</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-17T22:15:00+02:00" pubdate data-updated="true">2013 June 17<span>th</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>A lot of time passed since my last post&hellip; In fact it has been almost precisely a year since when I tried to write my 3rd blog post, but to my dismay I realized that the connection to the db failed.</p>
+
+<p>So, it was June 2012 at the time&hellip; 3 months passed since the previous post, and I decided to start learning F#, I attended some courses at the university and passed 2 more exams (I wanted to use F# for the OpenGL course, but at the end I procrastinated too much).</p>
+
+<p>Some other things happened as well, among them: the passing of my longest lived cat, Lady.</p>
+
+<p><img class="right" src="images/lady.png" width="300" title="&#34;my cat's obituary&#34;" alt="&#34;my cat's obituary&#34;"></p>
+
+<p>It was quite sad, she had to be put down after a tumor grow back after surgery (she went under the knives 2 times) and the vet thought that we should&rsquo;ve spared her the last days: she was barely moving on the bed (but she was still willing to eat: I deluded myself into thinking that this meant she was still feeling somewhat alright).</p>
+
+<p>It was the first time I witnessed the death of something I could relate to, but my reaction was totally silent and composed. I don&rsquo;t think of myself as someone very emotional or attached to other living beings.</p>
+
+<p>Still, it makes you wonder about <em>lives after death</em>, not the supernatural ones&hellip; but the lives of those who outlive you.</p>
+
+<p><em>How do they remember you?</em></p>
+
+<p><em>Did your life mattered? Now that you disappeared what has changed?</em></p>
+
+<p>More than one year later, we still have our cat litter in the same place where Lady was using it: it&rsquo;s not that we&rsquo;re paying respect or anything, we&rsquo;re just quite sloppy and slow to get rid of useless things&hellip; still, it&rsquo;s something that prompts me to think again of what I&rsquo;m missing.</p>
+
+<p>Ok, so why didn&rsquo;t I write this before? What happened last June?</p>
+
+<p>Well, I already mentioned that I had some problems with the hardware&hellip; just look at this picture:</p>
+
+<p><img class="center" src="images/sheevaplug.jpg" width="300" title="&#34;my sheevaplug crazy wiring&#34;" alt="&#34;my sheevaplug crazy wiring&#34;"></p>
+
+<p>Basically, the first pin, the one that actually powers the cable, was nonfunctional in the sheevaplug I got&hellip; just to get it to run an usb key, I had to make that weird loop through an usb hub.</p>
+
+<p>Obviously, at the time, I tried to contact GlobalScale&rsquo;s tech support, but I was only able to make a brief call through skype&hellip; their only email address available was the sales one, and I got no response from that.</p>
+
+<p>Lesson learned: if you buy consumer goods overseas, don&rsquo;t expect much support, if the good is worth more than they&rsquo;re willing to blindly reship at the first customer complaint (I bought some videogames that, after being lost mid-voyage, the seller had no problem to send them again -successfully, this time- ).</p>
+
+<p>On top of that, the sheevaplug has an armv5 cpu, and it shipped with a beta version of Ubuntu 9.04&hellip; though luck: Ubuntu supported only armv6 or greater with Ubuntu 9.10, and with 10.04 it moved the goalpost even further to armv7.</p>
+
+<p>So, to hope to get any security updates for any meaningful length of time, without going to an even less familiar land, the best choice was Debian 6, Squeeze&hellip; obviously, to install an alternate os I had to <a href="https://www.google.com/search?hl=en&amp;q=sheevaplug+uboot">update the builtin bootloader: U-boot</a>.</p>
+
+<p>To further complicate my life, at the time I tasted the almost-effortless (but not perfect) experience of Time Machine backups on MacOSX, and so I wanted to replicate the same thing, both for my Linux system and for my MacOSX partition (which I got rid of since then, due to having space as a premium on an SSD). To do it I had to use <a href="http://netatalk.sourceforge.net/">Netatalk</a> but at the time there were no precompiled ARM debian packages for it&hellip; I tried both to crosscompile it and to compile it directly on the sheevaplug, long story short: it was too much of an hassle.</p>
+
+<p>The plan was to use it as network share (also for backups), local apt mirror, Squid proxy, web server, ssh tunnel, etc&hellip; Except for the Netatalk sharing (for linux I was satisfied with NFS) and the Squid proxy, I got all of this working; but the script I used to sync the apt mirror was failing often and I wasn&rsquo;t using that many machines contemporarily to warrant its use. Moreover the lan backup was weirdly taking too much time (the software I was using probably assumed RTT of a local disk, not a network one).</p>
+
+<p>At the end, due to these shortcomings, I never really made use of the 3 different lvm logical volumes I had on the sheevaplug, now I hear you saying:</p>
+
+<p><em>What? LVM on a sheevaplug?</em></p>
+
+<p>Well, yes&hellip; it was also a learning exercise after all, and it seemed nice to use volumes like these instead of some other quota mechanism&hellip; then again, the only physical volume resided on an external usb hard drive, so don&rsquo;t think too much about it. :P</p>
+
+<p>So, the technical problem I got was that the lvm volumes weren&rsquo;t being mounted anymore, and I had to manually remount them each time (possibly by resetting the device, since I kept lots of system files, like the ones in /usr/share, on the usb drive)&hellip; The drive and the lvm volumes alone seemed to be ok, since I could keep them mounted undefinitely on my desktop machine: A posteriori, this might have made me doubt about some other problems with the arm box (memory? usb?).</p>
+
+<p>So, I finally managed to get my still-unstyled blog application online with the Cherokee web server and the Postgresql db. I planned to use sqlite at the beginning, due to the very small audience, but I couldn&rsquo;t run wsgi with a single worker, and multiple workers were incompatible with sqlite. But then I had to move all the data from the usb drive to a smallish (2GB) usb flash memory.</p>
+
+<p>This was almost all fine and dandy, except that I never managed to get Cherokee and Postgres (upon which the workers depended) to automatically start at boot time, and weirdly there was absolutely no error on the logs&hellip; But given that I wasn&rsquo;t rebooting it that much often, I just ignored it, until&hellip;</p>
+
+<p>The problem I mentioned at the beginning happened: now I couldn&rsquo;t start Postgresql anymore&hellip; this meant I couldn&rsquo;t even use pg_dump for the backup.</p>
+
+<p>I resorted to manually backup the cluster files, and then I tried to purge and reinstall the package, but apt-get kept failing&hellip; I don&rsquo;t know if it was again a systemic problem or if instead it was a <a href="https://bugs.launchpad.net/ubuntu/+source/postgresql-8.3/+bug/235379/comments/15">known problem with the debian postgresql packaging</a>, but I was wary of running the fix of &ldquo;find and delete everything postgre-related&rdquo; since I wasn&rsquo;t able to recover my data just yet&hellip;</p>
+
+<p>To make things worse: when I finally managed to get a postgresql install loaded with the cluster from the sheevaplug on my desktop machine, I sadly realized that it wasn&rsquo;t compatible: it was compiled with different float optimization, and basically an x86 db, x64 or arm db are all mutually incompatible with each other due to that. Now that I&rsquo;ve done a bit more coding with binary files, I&rsquo;m a little bit skeptical about the technical reasons underlying that incompatibility: Just look at Python&rsquo;s <a href="http://docs.python.org/3/library/struct.html">struct module</a>, the only way you can get something that is platform dependent, is if you ignore all the flags that let you specify the endiannes of the data, and if instead you roll with the native choice&hellip; It seems to me almost like that somewhere in the Postgresql code, there&rsquo;s a struct that&rsquo;s mapped directly to disk; but obviously it won&rsquo;t be this easy, I expect that code to have several layers of abstraction.</p>
+
+<p>So, I got stuck with a non-working postgresql install, a possibly flaky hardware, a backup I couldn&rsquo;t access and a half-finished blogging software&hellip; no wonder that I wasn&rsquo;t feeling motivated to get back to blogging.</p>
+
+<p>At the end, I realized that the very blog software I started writing, while a learning experience, was also not really what I wanted to do: what I wanted to do was to make something that other people could appreciate and use, and without any other people to motivate me to finish it, it just languished.</p>
+
+<p>In fact, I failed to keep plain-text backups of my blog content, I added code to handle diffs between one post and another, I added OpenID login for the admin interface&hellip; I was basically rebuilding something that I could&rsquo;ve got for free by using a VCS and ssh access, just like what&rsquo;s being used by the several static site generators available on the net.</p>
+
+<p>And then there&rsquo;re the obvious benefits of static sites: negligible server load, and a lot less moving parts that can possibly go awry&hellip; more frugal and ecologic even :) I already planned to avoid handling comments on my own with my blog software, so relying on Disqus or similar services wasn&rsquo;t even a problem.</p>
+
+<p>With that said: yesterday I whipped up Qemu, created an ARM debian box, sweared a bit at some other unintuitive postgresql errors, and finally got my data back&hellip; and Now I finally started blogging again, this time as an <a href="http://octopress.org/">Octopress</a> blog running on github pages.</p>
+
+<p>It isn&rsquo;t perfect, and I already witnessed a small problem that seems undocumented: markdown files with spaces in the name break the hyperlinking. But overall I&rsquo;m satisfied with moving to a simpler, more popular, and -ultimately- saner solution :)</p>
+
+<p>So, where does this leave me? In this last year a lot of small things happened, but I&rsquo;m still not in the place that I want to be&hellip; but limiting myself with the bigger topic of this post, among the consequences of such an ordeal, I now grok better this <a href="https://news.ycombinator.com/item?id=5691216">nugget of wisdom</a>.</p>
+
+<p>In fact, I think that I should refrain from pursuing projects, if those aren&rsquo;t truly needed by other people, and if those people aren&rsquo;t around to motivate me to work on them. I should focus more, and to do that, one obvious approach is to start learning less of the random things that I stumble upon almost daily.</p>
+
+<p>Another thing, is a small and healthy distaste for arm machines. I mean: I have an arm smartphone, they can indeed be more power efficient, and they apparently got most of the mobile market&hellip; but if you&rsquo;re thinking of buying one for your personal use, you should ask yourself: <em>Do I really need it?</em></p>
+
+<p>If you&rsquo;re building a company on top of that hardware, by all means: go for it. But otherwise, I can&rsquo;t avoid but think that I could&rsquo;ve spared myself many hassles by developing my small home server on a simple x86 box, maybe a small netbook (it isn&rsquo;t easy to get a cheap and small enclosure + microitx box from what I&rsquo;ve seen)&hellip; that could&rsquo;ve been much more reliable than my sheevaplug, while slightly more power consuming (and it would&rsquo;ve even been easier to use locally, since I could&rsquo;ve avoided the flaky usb debug port to be used through screen).</p>
+
+<p>This very thing also applies for the recent craze about RaspberryPis; I have seen a friend using one as media center, but still he was complaining that not always the frame-rate was perfectly smooth (just to point out that&rsquo;s not perfect for every purpose). You should ask yourself: <em>Am I already doing something that could benefit from the smaller physical size and power footprint of such a machine?</em> If you aren&rsquo;t I think it&rsquo;s better to start with an existing prototype of such a software/system, and move to ARM only when you really need it.</p>
+
+<p>Now <a href="http://torvalds-family.blogspot.it/2009/01/odd-hardware.html">Linus Torvalds&#8217; opinion on <em>odd-ball machines</em></a> strongly resonates in my brain :)</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/03/06/My-Desktop-Setup/">My Desktop Setup</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-06T15:32:00+01:00" pubdate data-updated="true">2012 March 6<span>th</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It took me more time than I expected to write up this second post, I hope to be able to ramp up the rhythm soon.
+The reason is that I haven&rsquo;t really wrote this up by impulse&hellip; In fact I wanted to write this since quite some time, and in the meanwhile in the last days, I was busy planning a <a href="http://bglug.it/2012/02/23/bglug-partecipa-allubuntu-global-jam">small Jam</a> along with other small misc duties.</p>
+
+<p>Two years and a half ago I bought a new desktop computer, it had to be shared with my family, so I planned that it would&rsquo;ve run Windows alongside Linux.</p>
+
+<p>That&rsquo;s not too bad, since having the opportunity to run games or other software natively on Windows is nice to have, but the truth is that being this only a secondary computer for me, it would&rsquo;ve run Windows most of the time.</p>
+
+<p>So, to test something that I hadn&rsquo;t tried yet at the time (that would&rsquo;ve been useful in case someone dropped by our LUG asking for support about it) and to skip chainloading the Windows bootloader (thus potentially slowing down the boot, something I didn&rsquo;t want: Given that I used an ssd as a boot drive, I wanted to avoid such things, even if it would&rsquo;ve only a marginal effect) I chose to use wubi.</p>
+
+<p>For those that don&rsquo;t know about it: it avoids changing the bootloader with grub and installs ubuntu in a loopback mounted virtual disk (a normal file under windows). It was quite neat, but I stumbled upon some nasty issues when upgrading to grub2, such as <a href="https://bugs.launchpad.net/ubuntu/+source/grub2/+bug/477104">this bug</a>.</p>
+
+<p>At the end, I&rsquo;m not quite convinced of the tradeoff in complexity for new users, given the potential nasty edge cases&hellip;</p>
+
+<p>Btw, I also decided to try some other things I didn&rsquo;t really have much experience in linux&hellip; One of these, if I remember correctly, was Ext4; while the other was simply installing Linux on an ATI gpu.</p>
+
+<p>ATI has always had a bad reputation among linux users, but when I chose the hardware for that desktop, the Radeon 4890 seemed like a nice choice, and I was curious about proving that wrong.</p>
+
+<p>In fact, it&rsquo;s been some years now that they started an <a href="http://www.phoronix.com/scan.php?page=article&amp;item=826&amp;num=1">effort to supply a good OSS driver</a> for their cards. Sure, you can still be out of luck when running a bleeding edge distribution, due to the delay in updating the drivers to get them working with the latest changes in Xorg and such&hellip;</p>
+
+<p>In fact Ubuntu had to <a href="http://www.phoronix.com/scan.php?page=article&amp;item=amd_open_jaunty&amp;num=1">get into agreements with ATI</a> to be able to ship the drivers in time or <a href="http://www.phoronix.com/scan.php?page=article&amp;item=ubuntu_1104_radeon&amp;num=1">backport some of the Xorg changes</a>.</p>
+
+<p>Surely, I still found Intel gpu drivers, to be more stable (even if lacking in OpenGL features and performance, and obviously I&rsquo;m not counting the horrible GMA500), but I find it strange that Linux people are still preferring Nvidia over Ati, when they&rsquo;re being so hostile by <a href="http://www.phoronix.com/scan.php?page=article&amp;item=nvidia_kills_nv&amp;num=1">removing support to their old 2d-only open source driver</a> altogheter without commiting to help the <a href="http://nouveau.freedesktop.org/">Nouveau project</a>.</p>
+
+<p>I&rsquo;ve also seen plenty of times, Linux users with an Nvidia powered laptop, struggling to set up correctly an external display/beamer, this due to the fact that Nvidia doesn&rsquo;t support xrandr1.2 and pushes for their own TwinView option, with their own configuration tools, and their own set of problems.</p>
+
+<p>With this setup, I&rsquo;ve been able to see some interesting things: like the performance of the loopback drive&hellip; by doing a readonly benchmark inside palimpsest I noticed that it was about half of the performance when directly accessing the ntfs drive (that, being a 30GB SSD, is thus really tight for hosting 2 OS installations)</p>
+
+<p>I also chose to keep all the user configuration files on the SSD, and move only huge things on the secondary traditional hard drive&hellip; Thanks to the fact that both Linux and Windows Vista support symbolic links, this gives me quite a bit of flexibility in setting that up. That said, I don&rsquo;t think that the small advantage of being able to load chrome&rsquo;s sqlite dbs faster and such things outweighs the time lost cramming everything into such a small space and tracking down rogue programs/users when those filled their home folder (not to mention the pain of setting up all the symlink for each new user).</p>
+
+<p>In fact I think I won&rsquo;t ever use such a directory layout&hellip; Heck: it&rsquo;s 2012, we aren&rsquo;t supposed to micromanage disk space this way anymore.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/29/%EC%95%88%EB%85%95-%EC%84%B8%EA%B3%84/">안녕 세계</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-29T00:36:00+01:00" pubdate data-updated="true">2012 February 29<span>th</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Wait&hellip; are you asking <em>&ldquo;what are those characters?&rdquo;</em>
+Well, that&rsquo;s supposed to be &ldquo;Hello world&rdquo; in korean, I jut put it there to test unicode url in my brand new blog :D</p>
+
+<p>&hellip;and yes: obviously, this is my first post, and since I somewhat like the korean alphabet, I found that using that as the title was somewhat fitting :)</p>
+
+<p>This is not really noticeable from this very very simple page, but I actually spent quite a bit of time on the backend. It&rsquo;s still missing styles, rss, a working pagination, javascript goodness and a bunch of things&hellip; but at least now the basics of the blog are there, I can start writing content, and then I&rsquo;ll just integrate the missing features (you know&hellip; <a href="http://en.wikipedia.org/wiki/Minimum_viable_product">minimum viable product</a> :P)</p>
+
+<p>Also: for now I&rsquo;m using a crappy .co.cc domain, but as soon as I&rsquo;ll be able to host something meaningful here, I think I&rsquo;ll switch to something better</p>
+
+<p>It&rsquo;s been more than 3 years since I first had the idea of running my own blog, why did it take so long?</p>
+
+<p>Well&hellip; aside from my usual procrastination problem, this is due to the fact that I decided to create it from scratch, and I decided to impose on myself some very weird requirements</p>
+
+<p>Like the ability to automatically redirect the urls when an user does a typo, or keeping semi-automatically an image of my mug for each post (a bit narcissistic, but this way I hope to preserve a log of the mood in which I was when writing these posts, and in the long term I&rsquo;ll be able to see how I changed&hellip; like in those fancy timelapse videos)</p>
+
+<p>For now, I&rsquo;m also hosting this directly on my home internet connection on a Debian squeeze, running on arm (and I had quite a bit of problems with my hardware setup, but I think I&rsquo;ll write about it in another post)</p>
+
+<p>So, I&rsquo;ll progressively add more info about myself, what I&rsquo;m working on, what I find interesting, and possibly my unrequested opinion on the issue du jour :P</p>
+
+<p>I&rsquo;m writing all of this in english, and I plan to refrain altogether to write in my native language (Italian) for several reasons:</p>
+
+<ul>
+<li>Most of the content on the internet is in english, and it has a bigger audience.</li>
+<li>People who restrict themselves only to their native language imho are crippling their access to knowledge&hellip; in particular, in the IT field, being proficent in it is almost a must, and I think that if you have the possibility to directly engage with the english-speaking world/community/whatever you should do so. You could say I&rsquo;m doing it out of a personal principle.</li>
+<li>I&rsquo;m planning on making a life abroad&hellip; sticking to my native language doesn&rsquo;t make sense.</li>
+<li>The only things for which speaking to a strictly italian audience may make sense is for internal politics topics or similar issues, but given the sheer idiocy of the current state of italian society, I think it&rsquo;s better to ingnore all of that and work on what we can actually improve.</li>
+<li>Obviously, also to get the hang to write some somewhat long prose in english (I don&rsquo;t really have problems communicating, but I&rsquo;m not really fluent: I periodically stop to think for the best word to use, and I also think that when writing I just structure too many sentences in first singular person form, and split the text in an ugly and self-centered way, native english people probably find my writing style childish and less clear to follow).</li>
+</ul>
+
+
+<p>This last point, will apply only if I&rsquo;ll be able to keep up with this habit :D We&rsquo;ll see.</p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
     <a href="/blog/archives">Blog Archives</a>
@@ -89,6 +334,18 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/06/17/back-to-sanity/">Back to Sanity</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/03/06/My-Desktop-Setup/">My Desktop Setup</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/29/%EC%95%88%EB%85%95-%EC%84%B8%EA%B3%84/">안녕 세계</a>
+      </li>
     
   </ul>
 </section>

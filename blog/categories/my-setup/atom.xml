@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: my setup | Dario's coredump]]></title>
+  <link href="http://berdario.github.io/blog/categories/my-setup/atom.xml" rel="self"/>
+  <link href="http://berdario.github.io/"/>
+  <updated>2013-06-18T02:40:16+02:00</updated>
+  <id>http://berdario.github.io/</id>
+  <author>
+    <name><![CDATA[Dario Bertini]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[My Desktop Setup]]></title>
+    <link href="http://berdario.github.io/blog/2012/03/06/My-Desktop-Setup/"/>
+    <updated>2012-03-06T15:32:00+01:00</updated>
+    <id>http://berdario.github.io/blog/2012/03/06/My-Desktop-Setup</id>
+    <content type="html"><![CDATA[<p>It took me more time than I expected to write up this second post, I hope to be able to ramp up the rhythm soon.
+The reason is that I haven&rsquo;t really wrote this up by impulse&hellip; In fact I wanted to write this since quite some time, and in the meanwhile in the last days, I was busy planning a <a href="http://bglug.it/2012/02/23/bglug-partecipa-allubuntu-global-jam">small Jam</a> along with other small misc duties.</p>
+
+<p>Two years and a half ago I bought a new desktop computer, it had to be shared with my family, so I planned that it would&rsquo;ve run Windows alongside Linux.</p>
+
+<p>That&rsquo;s not too bad, since having the opportunity to run games or other software natively on Windows is nice to have, but the truth is that being this only a secondary computer for me, it would&rsquo;ve run Windows most of the time.</p>
+
+<p>So, to test something that I hadn&rsquo;t tried yet at the time (that would&rsquo;ve been useful in case someone dropped by our LUG asking for support about it) and to skip chainloading the Windows bootloader (thus potentially slowing down the boot, something I didn&rsquo;t want: Given that I used an ssd as a boot drive, I wanted to avoid such things, even if it would&rsquo;ve only a marginal effect) I chose to use wubi.</p>
+
+<p>For those that don&rsquo;t know about it: it avoids changing the bootloader with grub and installs ubuntu in a loopback mounted virtual disk (a normal file under windows). It was quite neat, but I stumbled upon some nasty issues when upgrading to grub2, such as <a href="https://bugs.launchpad.net/ubuntu/+source/grub2/+bug/477104">this bug</a>.</p>
+
+<p>At the end, I&rsquo;m not quite convinced of the tradeoff in complexity for new users, given the potential nasty edge cases&hellip;</p>
+
+<p>Btw, I also decided to try some other things I didn&rsquo;t really have much experience in linux&hellip; One of these, if I remember correctly, was Ext4; while the other was simply installing Linux on an ATI gpu.</p>
+
+<p>ATI has always had a bad reputation among linux users, but when I chose the hardware for that desktop, the Radeon 4890 seemed like a nice choice, and I was curious about proving that wrong.</p>
+
+<p>In fact, it&rsquo;s been some years now that they started an <a href="http://www.phoronix.com/scan.php?page=article&amp;item=826&amp;num=1">effort to supply a good OSS driver</a> for their cards. Sure, you can still be out of luck when running a bleeding edge distribution, due to the delay in updating the drivers to get them working with the latest changes in Xorg and such&hellip;</p>
+
+<p>In fact Ubuntu had to <a href="http://www.phoronix.com/scan.php?page=article&amp;item=amd_open_jaunty&amp;num=1">get into agreements with ATI</a> to be able to ship the drivers in time or <a href="http://www.phoronix.com/scan.php?page=article&amp;item=ubuntu_1104_radeon&amp;num=1">backport some of the Xorg changes</a>.</p>
+
+<p>Surely, I still found Intel gpu drivers, to be more stable (even if lacking in OpenGL features and performance, and obviously I&rsquo;m not counting the horrible GMA500), but I find it strange that Linux people are still preferring Nvidia over Ati, when they&rsquo;re being so hostile by <a href="http://www.phoronix.com/scan.php?page=article&amp;item=nvidia_kills_nv&amp;num=1">removing support to their old 2d-only open source driver</a> altogheter without commiting to help the <a href="http://nouveau.freedesktop.org/">Nouveau project</a>.</p>
+
+<p>I&rsquo;ve also seen plenty of times, Linux users with an Nvidia powered laptop, struggling to set up correctly an external display/beamer, this due to the fact that Nvidia doesn&rsquo;t support xrandr1.2 and pushes for their own TwinView option, with their own configuration tools, and their own set of problems.</p>
+
+<p>With this setup, I&rsquo;ve been able to see some interesting things: like the performance of the loopback drive&hellip; by doing a readonly benchmark inside palimpsest I noticed that it was about half of the performance when directly accessing the ntfs drive (that, being a 30GB SSD, is thus really tight for hosting 2 OS installations)</p>
+
+<p>I also chose to keep all the user configuration files on the SSD, and move only huge things on the secondary traditional hard drive&hellip; Thanks to the fact that both Linux and Windows Vista support symbolic links, this gives me quite a bit of flexibility in setting that up. That said, I don&rsquo;t think that the small advantage of being able to load chrome&rsquo;s sqlite dbs faster and such things outweighs the time lost cramming everything into such a small space and tracking down rogue programs/users when those filled their home folder (not to mention the pain of setting up all the symlink for each new user).</p>
+
+<p>In fact I think I won&rsquo;t ever use such a directory layout&hellip; Heck: it&rsquo;s 2012, we aren&rsquo;t supposed to micromanage disk space this way anymore.</p>
+]]></content>
+  </entry>
+  
+</feed>
