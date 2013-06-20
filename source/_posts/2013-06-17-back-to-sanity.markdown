@@ -12,7 +12,7 @@ So, it was June 2012 at the time... 3 months passed since the previous post, and
 
 Some other things happened as well, among them: the passing of my longest lived cat, Lady.
 
-{% img right images/lady.png 300 "my cat's obituary" %}
+{% img right /images/lady.png 300 "my cat's obituary" %}
 
 It was quite sad, she had to be put down after a tumor grow back after surgery (she went under the knives 2 times) and the vet thought that we should've spared her the last days: she was barely moving on the bed (but she was still willing to eat: I deluded myself into thinking that this meant she was still feeling somewhat alright).
 
@@ -31,7 +31,7 @@ Ok, so why didn't I write this before? What happened last June?
 
 Well, I already mentioned that I had some problems with the hardware... just look at this picture:
 
-{% img center images/sheevaplug.jpg 300 "my sheevaplug crazy wiring" %}
+{% img center /images/sheevaplug.jpg 300 "my sheevaplug crazy wiring" %}
 
 Basically, the first pin, the one that actually powers the cable, was nonfunctional in the sheevaplug I got... just to get it to run an usb key, I had to make that weird loop through an usb hub.
 
