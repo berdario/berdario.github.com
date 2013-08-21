@@ -58,11 +58,21 @@ task :résumé do
   end
 end
 
+def clojurescript(profile)
+  rm "source/berdario.js" if File.exists? "source/berdario.js"
+  cd "source/_clojurescript" do
+    system "lein cljsbuild once #{profile}"
+  end
+end
+
 task :generate => [:résumé]
 
 desc "Generate jekyll site"
-task :generate do
+task :generate, [:cljprofile] do |t, args|
+  args.with_defaults(:cljprofile => "prod")
   raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
+  puts "## Compiling ClojureScript"
+  clojurescript args.cljprofile
   puts "## Generating Site with Jekyll"
   system "compass compile --css-dir #{source_dir}/stylesheets"
   system "jekyll"
