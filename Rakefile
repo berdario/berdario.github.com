@@ -83,15 +83,19 @@ task :watch do
   raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
   puts "Starting to watch source with Jekyll and Compass."
   system "compass compile --css-dir #{source_dir}/stylesheets" unless File.exist?("#{source_dir}/stylesheets/screen.css")
+  cljsbuildPid = nil
+  cd "source/_clojurescript" do
+    cljsbuildPid = Process.spawn("lein cljsbuild auto dev")
+  end
   jekyllPid = Process.spawn({"OCTOPRESS_ENV"=>"preview"}, "jekyll --auto")
   compassPid = Process.spawn("compass watch")
 
   trap("INT") {
-    [jekyllPid, compassPid].each { |pid| Process.kill(9, pid) rescue Errno::ESRCH }
+    [cljsbuildPid, jekyllPid, compassPid].each { |pid| Process.kill(9, pid) rescue Errno::ESRCH }
     exit 0
   }
 
-  [jekyllPid, compassPid].each { |pid| Process.wait(pid) }
+  [cljsbuildPid, jekyllPid, compassPid].each { |pid| Process.wait(pid) }
 end
 
 desc "preview the site in a web browser"
