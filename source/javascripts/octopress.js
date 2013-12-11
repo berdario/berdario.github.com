@@ -52,7 +52,7 @@ function testFeatures() {
     $('html').addClass('no-placeholder');
   }
 }
-
+/*
 function addCodeLineNumbers() {
   if (navigator.appName === 'Microsoft Internet Explorer') { return; }
   $('div.gist-highlight').each(function(code) {
@@ -68,7 +68,7 @@ function addCodeLineNumbers() {
     $(code).html(table);
   });
 }
-
+*/
 function flashVideoFallback(){
   var flashplayerlocation = "/assets/jwplayer/player.swf",
       flashplayerskin = "/assets/jwplayer/glow/glow.xml";
