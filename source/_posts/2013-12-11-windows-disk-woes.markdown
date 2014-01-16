@@ -36,7 +36,7 @@ But on top of that, the Uninstall Programs dialog completely ignores these apps 
 
 To make this even worse, if you look at the contents, you'll see that there's some duplication: XboxLIVEGames, at least 3 copies of ZuneMusic, etc.
 
-Apparently Windows8 "helpfully" stores old versions of all your metro apps, doesn't let you see the disk footprint of these, and doesn't even give you an easy to access way to purge these old programs from the system.
+Apparently Windows8 "helpfully" stores old versions of all your metro apps, doesn't let you see the disk footprint of these, doesn't let you change the installation folder and doesn't even give you an easy to access way to purge these old programs from the system.
 
 (Things might have changed in the meanwhile, especially with the release of 8.1, but as you can guess, updating to 8.1 when Windows leaves so few disk space available is not really feasible: all Windows version upgrade usually cannot use a second disk as cache for the files to be installed, thus it requires at least twice the disk space that will be used for the installed system)
 
