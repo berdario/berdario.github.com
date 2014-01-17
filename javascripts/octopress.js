@@ -113,7 +113,6 @@ $('document').ready(function() {
   testFeatures();
   wrapFlashVideos();
   flashVideoFallback();
-  //addCodeLineNumbers();
   getNav();
   addSidebarToggler();
 });

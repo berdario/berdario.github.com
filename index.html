@@ -9,7 +9,7 @@
   <meta name="author" content="Dario Bertini">
 
   
-  <meta name="description" content="Originally I wanted to write another post, akin to &ldquo;Cyanogenmod is a ghetto&rdquo;. In fact I wasn&rsquo;t really fond of that project and, &hellip;">
+  <meta name="description" content="I found today this note I forgot about from October 2010, the format was clearly thought for this blog, but nowadays I wouldn&rsquo;t use such strong &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,91 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/17/the-fhs-is-crap/">The FHS Is Crap</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-17T17:10:00+01:00" pubdate data-updated="true">2014 January 17<span>th</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><em>I found today this note I forgot about from October 2010, the format was clearly thought for this blog, but nowadays I wouldn&rsquo;t use such strong words as &ldquo;crap&rdquo;. Anyhow since I still agree with it, here it is</em></p>
+
+<p>The Filesystem Hierarchy Standard is a mess, I never liked it, and nobody follows it in its entirety&hellip;
+(Sorry for being so direct, but I thought about it, and I think it&rsquo;s the better way to start to explain what I think about this).</p>
+
+<p>On the other hand, obviously, a bad standard is better than no standard at all&hellip;</p>
+
+<p>I think that for the most part the distinction between /bin /sbin /opt /usr/bin &amp; /usr/sbin is moot, and only forces us to use more environment variables, and makes more complicated to browse the system directories (and is especially a pain for all those users that don&rsquo;t know the existance of &lsquo;which&rsquo;).</p>
+
+<p>Why kill is in /bin and killall in /usr/bin? why alsactl is in /sbin and dd is in /bin? why are bash and plymouth in /bin?</p>
+
+<p>Sure, a posteriori maybe you could find some explanation, but when thinking about it there&rsquo;s no clear distinction between a binary and a system binary (sure, fdisk or init, fit very well into the definition of system binary&hellip; but is this reason enough for keeping the directories splitted? I don&rsquo;t think so&hellip;)</p>
+
+<p>I also find useless the distinction of user commands in /usr/bin, when the fhs was first conceived, or on certain server installs, it could make sense&hellip;
+But nowadays, when we find a 30GB SSD &ldquo;paltry&rdquo;, and partitioning the disk of a desktop system between / and /home is (correctly) seen as futile, it doesn&rsquo;t.</p>
+
+<p>&ldquo;Nobody follows it in its entirety&rdquo;: The fhs says that python, perl, and similar things should reside in /usr/bin, but nowadays in the starting shebang of your scripts it&rsquo;s recommended to not use the full path for the interpreter, but instead to rely on /usr/bin/env
+(Ok, it&rsquo;s not really a problem of standard, it depends on user choices, etc&hellip; But that&rsquo;s the point: if you can&rsquo;t rely on the standard and you don&rsquo;t get many benefits from it, why forcing the developers/packagers/distributions to put the interpreters separate directory from /bin in the first place? )</p>
+
+<p>&ldquo;Nobody follows it in its entirety&rdquo;: There&rsquo;s not only google chrome who installs itself into /opt, on my system I also have into /opt: the google talk plugin, world of goo, and mendeley&hellip;
+But guess how many of these programs use /etc/opt/ and /var/opt/ ?
+Zero&hellip;</p>
+
+<p>I have 4 programs inside my /opt, and yet I&rsquo;m above the average concerning this&hellip; I&rsquo;d say that if something specified in a standard is so underutilized, it should be changed the next time that standard is revised&hellip;</p>
+
+<p>Besides that, even if I can appreciate the flexibility conceded to the developers by putting their programs in /opt, I&rsquo;d rather prefer that (since, at the end of the day, they are all shipped in .deb packages and are kept updated via apt just like all the other software in the system) their respective files would be in /bin /etc and using the system libraries: one of the reason that these programs are sitted in /opt is that they are shipping a their own copy of some system libraries (ffmpeg &amp; sqlite, sdl &amp; vorbis, qt4&hellip;)
+If it&rsquo;s surely better for a videogame like world of goo, I find it not-so optimal for an heavily developed and open-source browser like google chrome.</p>
+
+<p>And what about using it for programs like eclipse?
+When I had to install that huge thing downloaded directly from the website (cause the repositories were stuck at 3.2), I never liked to put it into /opt and messing around using sudo and tweaking privileges&hellip;</p>
+
+<p>In fact I always put it into a folder in my $HOME (tipically ~/Applications), because the only real advantage is for other users in being able to use that program&hellip;
+But if the original developer didn&rsquo;t bother to create a package to help multiple users using it on the same computer, then I put the blame on them, and surely don&rsquo;t bother myself either into fixing this (and I obviously despise at the same way developers that ships software for windows only in standalone .exe format, without any .msi installer whatsoever).</p>
+
+<p>But on the other hand, modern desktop systems (especially if mobile like a laptop/tablet)  have only one main users&hellip; And even when you have other users&hellip; How many of you have a brother/parent/spouse that needs to use eclipse just like you? (business settings obviously are another matter: and in fact, they despise software not shipped in a packaged form).</p>
+
+<p>I think that overall, the situation wouldn&rsquo;t be worse if we merged (via symlinks or unionfs or whatever) /bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin (except /opt, you may want to keep it for its flexibility, but otoh, as I wrote before, I don&rsquo;t think it has many real use cases) all together into /bin</p>
+
+<p>Moving from that to the current state in the users&#8217; home:</p>
+
+<p>I like the freedesktop base directory specification, and I wish it was followed universally&hellip; But there&rsquo;s one thing that sets me off: while the configuration files and the caches are kept under ~/.config and ~/.cache respectively; all the other data files are kept under ~/.local/share
+dot-local-slash-share ?
+I can only guess that originally it was supposed to be used as a per-user /usr directory, so we could have used it to store a .local/lib .local/bin .local/games .local/include .local/src .local/man and .local/etc (???)</p>
+
+<p>&hellip;and yet now we have this .local folder whos only job is to keep a share/ folder.</p>
+
+<p>What about the Music, Images, etc. folder instead? No standards whatsoever!
+If I&rsquo;m not wrong shuttlework himself wrote in a blog post about how, to help with some new unity interface features, we could use some environmental variables to point to the correct localized folders inside $HOME, but afaik we&rsquo;re still here with no easy way to find the correct folder automatically.</p>
+
+<p>Here&hellip; I&rsquo;m done&hellip; I think that, as of today, the standards can be much improved; but obviously, these are only my 2 cents (even though I strongly believe in them).</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -584,6 +669,10 @@ Well, that&rsquo;s supposed to be &ldquo;Hello world&rdquo; in korean, I jut put
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/17/the-fhs-is-crap/">The FHS Is Crap</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/24/let-down-by-googles-android/">Let Down by Google&#8217;s Android</a>
       </li>
     
@@ -597,10 +686,6 @@ Well, that&rsquo;s supposed to be &ldquo;Hello world&rdquo; in korean, I jut put
     
       <li class="post">
         <a href="/blog/2012/03/06/My-Desktop-Setup/">My Desktop Setup</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/02/29/%EC%95%88%EB%85%95-%EC%84%B8%EA%B3%84/">안녕 세계</a>
       </li>
     
   </ul>
