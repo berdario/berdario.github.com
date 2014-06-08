@@ -1,0 +1,64 @@
+---
+layout: post
+title: "Git"
+date: 2014-06-08 18:07
+comments: true
+categories: [programming]
+---
+
+I started using a VCS in 2009 for my bachelor thesis, it was a mess of a project: the 3 guys that previously worked on that code never bothered to use one, and so I took the opportunity to chose one. I picked Bazaar (bzr) since it seemed easy enough, written by someone who wasn't [so full of himself](https://www.youtube.com/watch?v=4XpnKHJAok8), had all the DVCS goodies and was extensively used in the Ubuntu project (I already had the opportunity to use Launchpad, and I really liked the experience of reporting bugs there, compared to the subpar experience on Bugzillas or Github). Also of note, since some people might hold this misconception: it's not a NIH project. The Mercurial project started just a few days after Git, while Bazaar was released just the prior month. Overall they appeared on the scene almost at the same time, around the time of Bitkeeper's free version disappeareance (but if we want to be picky, the NIH would go the other way, since Bazaar had as its precursor Baz/Gnu Arch)
+
+I kept using it for some of my personal projects, my dotfiles and such... But obviously in the meantime I had the opportunity to try out the competition: Hg, Darcs and obviously, Git.
+
+Of these, I always disliked Git, mainly due to its UI, mind-numbingly complex man pages and unhelpful errors, example:
+
+```
+$git pull --force repo
+There are no candidates for merging among the refs that you just fetched.
+Generally this means that you provided a wildcard refspec which had no
+matches on the remote end.
+$bzr pull --overwrite repo
+All changes applied successfully.
+Now on revision 2.
+```
+
+Or, let's compare the length of the `log` command documentation:
+
+```
+git help log | wc -l ; and bzr help log | wc -l ; and hg help -v log | wc -l
+1633
+191
+133
+```
+
+Or the apparently arbitrarily different command names and huge number of flags required for the simplest use cases:
+
+- `git daemon --base-path=. --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose` instead of `bzr serve` or `hg serve` (the latter even gives you a nifty web interface!)
+- `git symbolic-ref -q HEAD` instead of `hg branch`
+- `git show` instead of `bzr cat`, `hg cat`
+- `git ls-tree --names-only -r r1` instead of `bzr ls -r r1` (no, `git ls-files` won't do what you expect)
+
+Or, if you want to push a repo to a local folder, git will complain that it's not secure since it won't automatically update the working directory. The obvious solutions (`denyCurrentBranch` set to ignore or using a bare repository) obviously aren't true solutions, since you'll have to then create the wd manually (unlike with bzr, thanks to its different branch model).
+
+Every DVCS uses hashes to discern between the different commits/revisions, but while bzr and hg give you a meaningful increasing number, in git you're forced to use the sha1 hash (you can just use the first few chars, but it's still a bore to remember which sha1 comes before/after 3 or 4 other sha1 if those aren't consecutive).
+
+You might argue that it makes sense since it's a *"true"* distributed system, until you realize that most organizations still have an authorative repository you can pull from when you get back from holidays or, even worse, that most projects on github are actually small single-user repositories, where the benefit of globally unique hashes is dwarfed by the hassle of handling it. (Before 2010 on github there wasn't even the concept of "Organization" as we have now).
+
+Other than git itself, I loathe the closed minded git-users that don't care and aren't willing to understand other tools. For example, the DAG (Direct Acyclic Graph) it's an obvious approach to model a VCS: you pick a point/commit on it, an you can look at the tree deriving from it. But somehow, by virtue of it being among the first things explained in documentation about git innards, and due to the fact that a lot of git users are drawn to understand its innards (not due to curiosity, I fear, but due to the poor abstraction that the UI and the man pages are, they force you to learn such things), someone got the idea that the DAG was something special and unique of git. An example of a man page that forces you to deal with these concept is the one of `rev-parse`: if you want to learn what the `r1..r2` syntax does, you just have to read:
+
+>  &lt;rev1&gt;..&lt;rev2&gt;
+>   Include commits that are reachable from <rev2> but exclude those
+>   that are reachable from <rev1>. When either <rev1> or <rev2> is
+>   omitted, it defaults to HEAD.
+
+This definition makes sense, assuming that you can specify revisions on different branchs... but how often do you need to do that? And do you expect `rev1` to be included or excluded? Compare with bzr, where you can select ranges with `2..5`, `2..`, `..2` even using negatives: `..-2` and the common case is simple.
+
+Another example of "smug git user" is [this](http://0pointer.de/blog/projects/bizarre-fun.html): at first he starts with the nonsensical `man bzr-get`, which would make sense only if an actual `bzr-get` command existed (unlike git, other DVCS aren't separate commands stuck together with <strike>duct tape</strike> shell scripts). But later he would've been able to understand right away if he truly looked at the output of `man bzr` or `bzr help`, which tells you that what you want is `bzr help get` (the same help system works in git, and I'm quite sure that it was like that also in 2009).
+
+But at the end, most of the issues are just with the UI. Other people just say: *"but you don't use git from the command line: you just use the IDE integration"*, but this obviously has its limits since you won't be able to use a single IDE for all the possible projects and all the possible languages. Not to mention that if something goes wrong, the error message might be hidden (I've seen this happen), but if instead you'll try do it explicitly from cli, any errors will be painfully obvious very soon.
+
+And if any project is managed with git, I never had any problem to man up and work with it, in fact I have several repositories on github, and even this very blog is hosted there. But while launchpad was my go-to choice for my own projects/snippets I've now witnessed some job application forms that don't even have a field for a website/repository url, and instead ask to submit your github profile, to look at your projects. As much as I hate this monoculture and shortsighted choices, I realize that having code split all over the place on different code hosting sites is not in my best interest (I sent my application, but I'm quite certain that they never even looked at my CV due to that).
+
+I was on the fence until some months ago, when [even Emacs](https://lists.gnu.org/archive/html/emacs-devel/2014-01/msg00005.html) (the most prominent project non-hosted on launchpad that uses bzr, and the only one I know) started the migration process to git, so now I'm yielding: I'll keep using bzr if it'll happen that an existing project uses it, but as far as personal code goes, I'm going to convert my bzr repos to git, and go with the flow.
+
+
