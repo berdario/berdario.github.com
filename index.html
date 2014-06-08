@@ -9,7 +9,7 @@
   <meta name="author" content="Dario Bertini">
 
   
-  <meta name="description" content="Historically I&rsquo;ve been one of the few people who consistently preferred to use Tabs over Space (I&rsquo;m obviously talking about the &hellip;">
+  <meta name="description" content="I started using a VCS in 2009 for my bachelor thesis, it was a mess of a project: the 3 guys that previously worked on that code never bothered to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,107 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/06/08/git/">Git</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-08T18:07:00+02:00" pubdate data-updated="true">2014 June 8<span>th</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I started using a VCS in 2009 for my bachelor thesis, it was a mess of a project: the 3 guys that previously worked on that code never bothered to use one, and so I took the opportunity to chose one. I picked Bazaar (bzr) since it seemed easy enough, written by someone who wasn&rsquo;t <a href="https://www.youtube.com/watch?v=4XpnKHJAok8">so full of himself</a>, had all the DVCS goodies and was extensively used in the Ubuntu project (I already had the opportunity to use Launchpad, and I really liked the experience of reporting bugs there, compared to the subpar experience on Bugzillas or Github). Also of note, since some people might hold this misconception: it&rsquo;s not a NIH project. The Mercurial project started just a few days after Git, while Bazaar was released just the prior month. Overall they appeared on the scene almost at the same time, around the time of Bitkeeper&rsquo;s free version disappeareance (but if we want to be picky, the NIH would go the other way, since Bazaar had as its precursor Baz/Gnu Arch)</p>
+
+<p>I kept using it for some of my personal projects, my dotfiles and such&hellip; But obviously in the meantime I had the opportunity to try out the competition: Hg, Darcs and obviously, Git.</p>
+
+<p>Of these, I always disliked Git, mainly due to its UI, mind-numbingly complex man pages and unhelpful errors, example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$git pull --force repo
+</span><span class='line'>There are no candidates for merging among the refs that you just fetched.
+</span><span class='line'>Generally this means that you provided a wildcard refspec which had no
+</span><span class='line'>matches on the remote end.
+</span><span class='line'>$bzr pull --overwrite repo
+</span><span class='line'>All changes applied successfully.
+</span><span class='line'>Now on revision 2.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Or, let&rsquo;s compare the length of the <code>log</code> command documentation:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git help log | wc -l ; and bzr help log | wc -l ; and hg help -v log | wc -l
+</span><span class='line'>1633
+</span><span class='line'>191
+</span><span class='line'>133</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Or the apparently arbitrarily different command names and huge number of flags required for the simplest use cases:</p>
+
+<ul>
+<li><code>git daemon --base-path=. --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose</code> instead of <code>bzr serve</code> or <code>hg serve</code> (the latter even gives you a nifty web interface!)</li>
+<li><code>git symbolic-ref -q HEAD</code> instead of <code>hg branch</code></li>
+<li><code>git show</code> instead of <code>bzr cat</code>, <code>hg cat</code></li>
+<li><code>git ls-tree --names-only -r r1</code> instead of <code>bzr ls -r r1</code> (no, <code>git ls-files</code> won&rsquo;t do what you expect)</li>
+</ul>
+
+
+<p>Or, if you want to push a repo to a local folder, git will complain that it&rsquo;s not secure since it won&rsquo;t automatically update the working directory. The obvious solutions (<code>denyCurrentBranch</code> set to ignore or using a bare repository) obviously aren&rsquo;t true solutions, since you&rsquo;ll have to then create the wd manually (unlike with bzr, thanks to its different branch model).</p>
+
+<p>Every DVCS uses hashes to discern between the different commits/revisions, but while bzr and hg give you a meaningful increasing number, in git you&rsquo;re forced to use the sha1 hash (you can just use the first few chars, but it&rsquo;s still a bore to remember which sha1 comes before/after 3 or 4 other sha1 if those aren&rsquo;t consecutive).</p>
+
+<p>You might argue that it makes sense since it&rsquo;s a <em>&ldquo;true&rdquo;</em> distributed system, until you realize that most organizations still have an authorative repository you can pull from when you get back from holidays or, even worse, that most projects on github are actually small single-user repositories, where the benefit of globally unique hashes is dwarfed by the hassle of handling it. (Before 2010 on github there wasn&rsquo;t even the concept of &ldquo;Organization&rdquo; as we have now).</p>
+
+<p>Other than git itself, I loathe the closed minded git-users that don&rsquo;t care and aren&rsquo;t willing to understand other tools. For example, the DAG (Direct Acyclic Graph) it&rsquo;s an obvious approach to model a VCS: you pick a point/commit on it, an you can look at the tree deriving from it. But somehow, by virtue of it being among the first things explained in documentation about git innards, and due to the fact that a lot of git users are drawn to understand its innards (not due to curiosity, I fear, but due to the poor abstraction that the UI and the man pages are, they force you to learn such things), someone got the idea that the DAG was something special and unique of git. An example of a man page that forces you to deal with these concept is the one of <code>rev-parse</code>: if you want to learn what the <code>r1..r2</code> syntax does, you just have to read:</p>
+
+<blockquote><p> &lt;rev1&gt;..&lt;rev2&gt;
+  Include commits that are reachable from <rev2> but exclude those
+  that are reachable from <rev1>. When either <rev1> or <rev2> is
+  omitted, it defaults to HEAD.</p></blockquote>
+
+<p>This definition makes sense, assuming that you can specify revisions on different branchs&hellip; but how often do you need to do that? And do you expect <code>rev1</code> to be included or excluded? Compare with bzr, where you can select ranges with <code>2..5</code>, <code>2..</code>, <code>..2</code> even using negatives: <code>..-2</code> and the common case is simple.</p>
+
+<p>Another example of &ldquo;smug git user&rdquo; is <a href="http://0pointer.de/blog/projects/bizarre-fun.html">this</a>: at first he starts with the nonsensical <code>man bzr-get</code>, which would make sense only if an actual <code>bzr-get</code> command existed (unlike git, other DVCS aren&rsquo;t separate commands stuck together with <strike>duct tape</strike> shell scripts). But later he would&rsquo;ve been able to understand right away if he truly looked at the output of <code>man bzr</code> or <code>bzr help</code>, which tells you that what you want is <code>bzr help get</code> (the same help system works in git, and I&rsquo;m quite sure that it was like that also in 2009).</p>
+
+<p>But at the end, most of the issues are just with the UI. Other people just say: <em>&ldquo;but you don&rsquo;t use git from the command line: you just use the IDE integration&rdquo;</em>, but this obviously has its limits since you won&rsquo;t be able to use a single IDE for all the possible projects and all the possible languages. Not to mention that if something goes wrong, the error message might be hidden (I&rsquo;ve seen this happen), but if instead you&rsquo;ll try do it explicitly from cli, any errors will be painfully obvious very soon.</p>
+
+<p>And if any project is managed with git, I never had any problem to man up and work with it, in fact I have several repositories on github, and even this very blog is hosted there. But while launchpad was my go-to choice for my own projects/snippets I&rsquo;ve now witnessed some job application forms that don&rsquo;t even have a field for a website/repository url, and instead ask to submit your github profile, to look at your projects. As much as I hate this monoculture and shortsighted choices, I realize that having code split all over the place on different code hosting sites is not in my best interest (I sent my application, but I&rsquo;m quite certain that they never even looked at my CV due to that).</p>
+
+<p>I was on the fence until some months ago, when <a href="https://lists.gnu.org/archive/html/emacs-devel/2014-01/msg00005.html">even Emacs</a> (the most prominent project non-hosted on launchpad that uses bzr, and the only one I know) started the migration process to git, so now I&rsquo;m yielding: I&rsquo;ll keep using bzr if it&rsquo;ll happen that an existing project uses it, but as far as personal code goes, I&rsquo;m going to convert my bzr repos to git, and go with the flow.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -798,6 +899,10 @@ Well, that&rsquo;s supposed to be &ldquo;Hello world&rdquo; in korean, I jut put
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/06/08/git/">Git</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/06/07/tabs-vs-spaces/">Tabs vs Spaces</a>
       </li>
     
@@ -811,10 +916,6 @@ Well, that&rsquo;s supposed to be &ldquo;Hello world&rdquo; in korean, I jut put
     
       <li class="post">
         <a href="/blog/2013/12/24/let-down-by-googles-android/">Let Down by Google&#8217;s Android</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/11/windows-disk-woes/">Windows Disk Woes</a>
       </li>
     
   </ul>
