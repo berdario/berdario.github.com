@@ -4,7 +4,7 @@
   <title><![CDATA[Category: open | Dario's coredump]]></title>
   <link href="http://berdario.github.io/blog/categories/open/atom.xml" rel="self"/>
   <link href="http://berdario.github.io/"/>
-  <updated>2014-07-05T17:32:56-07:00</updated>
+  <updated>2014-07-05T18:24:05-07:00</updated>
   <id>http://berdario.github.io/</id>
   <author>
     <name><![CDATA[Dario Bertini]]></name>
@@ -157,6 +157,20 @@ Replacing open source applications with closed source ones. I felt it especially
 <p>In fact, even some very OSS-friendly developers and applications <a href="https://github.com/WhisperSystems/TextSecure/issues/127">don&rsquo;t ship outside the Play store</a> (but luckily <a href="http://www.cyanogenmod.org/blog/whisperpush-secure-messaging-integration">Cyanogenmod will bundle this particular application</a>). The reasons are somewhat complex: Moxie objects to the key handling of the F-Droid project and the requirement for enabling 3rd party sources, but it seems that the main reason that is blocking that bug is guaranteeing updates and having crash reporting (which could be solved from inside TextSecure).</p>
 
 <p>While on the front of removing the sideloading requirement, an <a href="https://gitorious.org/f-droid/fdroidclient/merge_requests/37">effort is currently underway</a> to get F-Droid running as a system app (possible when rooting or bundling it into your image), thus hopefully the future for a truly open Android is not so bleak.</p>
+
+<p><strong>Update (2014/07/05):</strong> I lasted some months, but now I think I&rsquo;ll yield. A similar sentiment to my post has been echoed in widely-read posts like <a href="http://lwn.net/Articles/602521/">this one</a> (I still have to try out Kolab, but it seems like a solid alternative and I&rsquo;ll probably use that in the near future), I&rsquo;ve been able to do most of what I want to do with my device, but other things have been quite a pain. Case in point: walking directions; since OsmAnd has poor search functionality (I don&rsquo;t need fancy things like &ldquo;looking for food&rdquo; or &ldquo;looking for a certain shop&rdquo;, I just need a simple address search for when the GPS isn&rsquo;t readily available, and you don&rsquo;t know exactly where are you directed to) I chose to rely on Waze for my navigation needs. Installing Waze was already a pain on its own, since old versions just crash, and the Amazon app store version is outdated. I asked support and they pointed me to other appstores, but from the quality and other details I suspect that these other stores are actually downloading the apks from Google Play on their own, to make them available again on their channel without any input from developers. Not a great alternative to the Google store, if that&rsquo;s their submission/QA process.</p>
+
+<p>But obviously Waze is mostly thought for car navigation. Using it to walk around in one-way roads is definitely not what it was built to do, and it&rsquo;s mind numbing to endure.</p>
+
+<p>Again: Some applications crash, all the websites who advertise a mobile app either link directly to the Google Play website (or send an intent which will be picked up by F-Droid thus giving back an empty results page), and there was the occasional meaningful app only available through the Play store. I expected that, and I&rsquo;ll try to nag fellow developers about it in the future, but living it is kinda depressing&hellip; it&rsquo;s a constant reminder that the battle is already lost.</p>
+
+<p>What was probably the last straw was being in one of the cities served by all those alternative taxi service: Flywheel, Uber, Sidecar and Lyft. Needless to say: all of these require the Google Play services. Given that the only thing that they actually require is Google Maps (and which could be avoided by simply leveraging OSM) I think that these companies should definitely deserve a slap on their wrist for not even trying to make a freely available alternative: after all, geolocation javascript APIs have been available since 5 years, and so integrating a webview with Google Maps (if not a full and complete webapp) should definitely be feasible.</p>
+
+<p>The sorry state of the alternatives app store make it so that essential requisited of the apps (like the presence of the Google Play services itself) isn&rsquo;t listed and made known, and thus you&rsquo;ll find out downloading apps that crash or fail to install without any useful error message.</p>
+
+<p>I don&rsquo;t think of giving in completely to Google again. I just recognize that I feel it&rsquo;s more difficult to give up Google&rsquo;s Android than Microsoft&rsquo;s Windows. And just like it was for me and almost all the current Linux users, who started by dipping their toes in the Linux waters by dual-booting and only gradually letting their need for Windows wither, I think that the solution in this case would be to dual boot: Use a free mobile OS normally, and switch to the proprietary one only when you truly need it.</p>
+
+<p>Due to the always-connected nature of our modern mobile phones and the lack of solid dual boot solutions, I&rsquo;m afraid that the dual-boot will just take form as having 2 devices. At first I thought that having a separate tablet for games with the Google services might fill that role, but apps that require being on a mobile phone (like the alternative taxi-services and textsecure) make it a much less attractive proposition.</p>
 ]]></content>
   </entry>
   
