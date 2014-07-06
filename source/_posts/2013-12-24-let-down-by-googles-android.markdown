@@ -3,7 +3,7 @@ layout: post
 title: "Let down by Google's Android"
 date: 2013-12-24 23:56
 comments: true
-categories: open source,android,cyanogenmod,security
+categories: [open source,android,cyanogenmod,security]
 ---
 
 Originally I wanted to write another post, akin to "Cyanogenmod is a ghetto". In fact I wasn't really fond of that project and, until now, with my android phone (a Nexus S) I chose to stick to the stock android version (I experienced cyanogenmod and others aftermarket mods with my previous phone: an HTC Dream, the very first android device).

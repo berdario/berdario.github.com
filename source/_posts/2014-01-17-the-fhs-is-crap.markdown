@@ -3,7 +3,7 @@ layout: post
 title: "The FHS is crap"
 date: 2014-01-17 17:10
 comments: true
-categories: rant,linux,standards,file system
+categories: [rant,linux,standards,file system]
 ---
 
 *I found today this note I forgot about from October 2010, the format was clearly thought for this blog, but nowadays I wouldn't use such strong words as "crap". Anyhow since I still agree with it, here it is*
