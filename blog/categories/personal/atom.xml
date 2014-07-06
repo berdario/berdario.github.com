@@ -4,7 +4,7 @@
   <title><![CDATA[Category: personal | Dario's coredump]]></title>
   <link href="http://berdario.github.io/blog/categories/personal/atom.xml" rel="self"/>
   <link href="http://berdario.github.io/"/>
-  <updated>2014-06-08T23:08:15+02:00</updated>
+  <updated>2014-07-05T17:32:56-07:00</updated>
   <id>http://berdario.github.io/</id>
   <author>
     <name><![CDATA[Dario Bertini]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Back to sanity]]></title>
     <link href="http://berdario.github.io/blog/2013/06/17/back-to-sanity/"/>
-    <updated>2013-06-17T22:15:00+02:00</updated>
+    <updated>2013-06-17T22:15:00-07:00</updated>
     <id>http://berdario.github.io/blog/2013/06/17/back-to-sanity</id>
     <content type="html"><![CDATA[<p>A lot of time passed since my last post&hellip; In fact it has been almost precisely a year since when I tried to write my 3rd blog post, but to my dismay I realized that the connection to the db failed.</p>
 
@@ -105,7 +105,7 @@
   <entry>
     <title type="html"><![CDATA[안녕 세계]]></title>
     <link href="http://berdario.github.io/blog/2012/02/29/%EC%95%88%EB%85%95-%EC%84%B8%EA%B3%84/"/>
-    <updated>2012-02-29T00:36:00+01:00</updated>
+    <updated>2012-02-29T00:36:00-08:00</updated>
     <id>http://berdario.github.io/blog/2012/02/29/안녕-세계</id>
     <content type="html"><![CDATA[<p>Wait&hellip; are you asking <em>&ldquo;what are those characters?&rdquo;</em>
 Well, that&rsquo;s supposed to be &ldquo;Hello world&rdquo; in korean, I jut put it there to test unicode url in my brand new blog :D</p>

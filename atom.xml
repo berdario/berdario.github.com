@@ -4,7 +4,7 @@
   <title><![CDATA[Dario's coredump]]></title>
   <link href="http://berdario.github.io/atom.xml" rel="self"/>
   <link href="http://berdario.github.io/"/>
-  <updated>2014-06-08T23:08:15+02:00</updated>
+  <updated>2014-07-05T17:32:56-07:00</updated>
   <id>http://berdario.github.io/</id>
   <author>
     <name><![CDATA[Dario Bertini]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Git]]></title>
     <link href="http://berdario.github.io/blog/2014/06/08/git/"/>
-    <updated>2014-06-08T18:07:00+02:00</updated>
+    <updated>2014-06-08T18:07:00-07:00</updated>
     <id>http://berdario.github.io/blog/2014/06/08/git</id>
     <content type="html"><![CDATA[<p>I started using a VCS in 2009 for my bachelor thesis, it was a mess of a project: the 3 guys that previously worked on that code never bothered to use one, and so I took the opportunity to chose one. I picked Bazaar (bzr) since it seemed easy enough, written by someone who wasn&rsquo;t <a href="https://www.youtube.com/watch?v=4XpnKHJAok8">so full of himself</a>, had all the DVCS goodies and was extensively used in the Ubuntu project (I already had the opportunity to use Launchpad, and I really liked the experience of reporting bugs there, compared to the subpar experience on Bugzillas or Github). Also of note, since some people might hold this misconception: it&rsquo;s not a NIH project. The Mercurial project started just a few days after Git, while Bazaar was released just the prior month. Overall they appeared on the scene almost at the same time, around the time of Bitkeeper&rsquo;s free version disappeareance (but if we want to be picky, the NIH would go the other way, since Bazaar had as its precursor Baz/Gnu Arch)</p>
 
@@ -90,7 +90,7 @@
   <entry>
     <title type="html"><![CDATA[Tabs vs Spaces]]></title>
     <link href="http://berdario.github.io/blog/2014/06/07/tabs-vs-spaces/"/>
-    <updated>2014-06-07T21:52:00+02:00</updated>
+    <updated>2014-06-07T21:52:00-07:00</updated>
     <id>http://berdario.github.io/blog/2014/06/07/tabs-vs-spaces</id>
     <content type="html"><![CDATA[<p>Historically I&rsquo;ve been one of the few people who consistently preferred to use Tabs over Space (I&rsquo;m obviously talking about the characters: 0x9 against 0x20).</p>
 
@@ -134,7 +134,7 @@
   <entry>
     <title type="html"><![CDATA[The last time I used KDE]]></title>
     <link href="http://berdario.github.io/blog/2014/01/19/the-last-time-i-used-kde/"/>
-    <updated>2014-01-19T23:55:00+01:00</updated>
+    <updated>2014-01-19T23:55:00-08:00</updated>
     <id>http://berdario.github.io/blog/2014/01/19/the-last-time-i-used-kde</id>
     <content type="html"><![CDATA[<p><em>It happened again: I postponed publishing new posts for months (it&rsquo;s now June when I&rsquo;m publishing this), and I built up a small backlog of things I want to write about. This time it&rsquo;s about KDE: I gathered some of my opinions back in the October of 2011, and after February I got to use it again at work (the workstation ran Nixos and later Fedora, and in both cases KDE seemed like a better choice than modern Gnome), maybe that was the reason for me to postpone this post, anyhow&hellip; on with the impressions that I got in 2011:</em></p>
 
@@ -165,7 +165,7 @@
   <entry>
     <title type="html"><![CDATA[The FHS is crap]]></title>
     <link href="http://berdario.github.io/blog/2014/01/17/the-fhs-is-crap/"/>
-    <updated>2014-01-17T17:10:00+01:00</updated>
+    <updated>2014-01-17T17:10:00-08:00</updated>
     <id>http://berdario.github.io/blog/2014/01/17/the-fhs-is-crap</id>
     <content type="html"><![CDATA[<p><em>I found today this note I forgot about from October 2010, the format was clearly thought for this blog, but nowadays I wouldn&rsquo;t use such strong words as &ldquo;crap&rdquo;. Anyhow since I still agree with it, here it is</em></p>
 
@@ -223,7 +223,7 @@ If I&rsquo;m not wrong shuttlework himself wrote in a blog post about how, to he
   <entry>
     <title type="html"><![CDATA[Let down by Google's Android]]></title>
     <link href="http://berdario.github.io/blog/2013/12/24/let-down-by-googles-android/"/>
-    <updated>2013-12-24T23:56:00+01:00</updated>
+    <updated>2013-12-24T23:56:00-08:00</updated>
     <id>http://berdario.github.io/blog/2013/12/24/let-down-by-googles-android</id>
     <content type="html"><![CDATA[<p>Originally I wanted to write another post, akin to &ldquo;Cyanogenmod is a ghetto&rdquo;. In fact I wasn&rsquo;t really fond of that project and, until now, with my android phone (a Nexus S) I chose to stick to the stock android version (I experienced cyanogenmod and others aftermarket mods with my previous phone: an HTC Dream, the very first android device).</p>
 
@@ -371,7 +371,7 @@ Replacing open source applications with closed source ones. I felt it especially
   <entry>
     <title type="html"><![CDATA[Windows disk woes]]></title>
     <link href="http://berdario.github.io/blog/2013/12/11/windows-disk-woes/"/>
-    <updated>2013-12-11T12:16:00+01:00</updated>
+    <updated>2013-12-11T12:16:00-08:00</updated>
     <id>http://berdario.github.io/blog/2013/12/11/windows-disk-woes</id>
     <content type="html"><![CDATA[<p>Another six months passed since the last post: if you look at <a href="https://github.com/berdario/berdario.github.com/tree/source">the sources</a> you&rsquo;ll see that I&rsquo;ve dabbled with a rewrite of the javascript sources to clojurescript, so due to this overhaul (that I haven&rsquo;t even completed) I postponed writing once again &ndash;_&ndash;</p>
 
@@ -416,7 +416,7 @@ Replacing open source applications with closed source ones. I felt it especially
   <entry>
     <title type="html"><![CDATA[Back to sanity]]></title>
     <link href="http://berdario.github.io/blog/2013/06/17/back-to-sanity/"/>
-    <updated>2013-06-17T22:15:00+02:00</updated>
+    <updated>2013-06-17T22:15:00-07:00</updated>
     <id>http://berdario.github.io/blog/2013/06/17/back-to-sanity</id>
     <content type="html"><![CDATA[<p>A lot of time passed since my last post&hellip; In fact it has been almost precisely a year since when I tried to write my 3rd blog post, but to my dismay I realized that the connection to the db failed.</p>
 
@@ -505,7 +505,7 @@ Replacing open source applications with closed source ones. I felt it especially
   <entry>
     <title type="html"><![CDATA[My Desktop Setup]]></title>
     <link href="http://berdario.github.io/blog/2012/03/06/My-Desktop-Setup/"/>
-    <updated>2012-03-06T15:32:00+01:00</updated>
+    <updated>2012-03-06T15:32:00-08:00</updated>
     <id>http://berdario.github.io/blog/2012/03/06/My-Desktop-Setup</id>
     <content type="html"><![CDATA[<p>It took me more time than I expected to write up this second post, I hope to be able to ramp up the rhythm soon.
 The reason is that I haven&rsquo;t really wrote this up by impulse&hellip; In fact I wanted to write this since quite some time, and in the meanwhile in the last days, I was busy planning a <a href="http://bglug.it/2012/02/23/bglug-partecipa-allubuntu-global-jam">small Jam</a> along with other small misc duties.</p>
@@ -543,7 +543,7 @@ The reason is that I haven&rsquo;t really wrote this up by impulse&hellip; In fa
   <entry>
     <title type="html"><![CDATA[안녕 세계]]></title>
     <link href="http://berdario.github.io/blog/2012/02/29/%EC%95%88%EB%85%95-%EC%84%B8%EA%B3%84/"/>
-    <updated>2012-02-29T00:36:00+01:00</updated>
+    <updated>2012-02-29T00:36:00-08:00</updated>
     <id>http://berdario.github.io/blog/2012/02/29/안녕-세계</id>
     <content type="html"><![CDATA[<p>Wait&hellip; are you asking <em>&ldquo;what are those characters?&rdquo;</em>
 Well, that&rsquo;s supposed to be &ldquo;Hello world&rdquo; in korean, I jut put it there to test unicode url in my brand new blog :D</p>

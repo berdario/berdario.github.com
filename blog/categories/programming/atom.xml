@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programming | Dario's coredump]]></title>
   <link href="http://berdario.github.io/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://berdario.github.io/"/>
-  <updated>2014-06-08T23:08:15+02:00</updated>
+  <updated>2014-07-05T17:32:56-07:00</updated>
   <id>http://berdario.github.io/</id>
   <author>
     <name><![CDATA[Dario Bertini]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Git]]></title>
     <link href="http://berdario.github.io/blog/2014/06/08/git/"/>
-    <updated>2014-06-08T18:07:00+02:00</updated>
+    <updated>2014-06-08T18:07:00-07:00</updated>
     <id>http://berdario.github.io/blog/2014/06/08/git</id>
     <content type="html"><![CDATA[<p>I started using a VCS in 2009 for my bachelor thesis, it was a mess of a project: the 3 guys that previously worked on that code never bothered to use one, and so I took the opportunity to chose one. I picked Bazaar (bzr) since it seemed easy enough, written by someone who wasn&rsquo;t <a href="https://www.youtube.com/watch?v=4XpnKHJAok8">so full of himself</a>, had all the DVCS goodies and was extensively used in the Ubuntu project (I already had the opportunity to use Launchpad, and I really liked the experience of reporting bugs there, compared to the subpar experience on Bugzillas or Github). Also of note, since some people might hold this misconception: it&rsquo;s not a NIH project. The Mercurial project started just a few days after Git, while Bazaar was released just the prior month. Overall they appeared on the scene almost at the same time, around the time of Bitkeeper&rsquo;s free version disappeareance (but if we want to be picky, the NIH would go the other way, since Bazaar had as its precursor Baz/Gnu Arch)</p>
 
@@ -81,7 +81,7 @@ git help log | wc -l ; and bzr help log | wc -l ; and hg help -v log | wc -l
   <entry>
     <title type="html"><![CDATA[Tabs vs Spaces]]></title>
     <link href="http://berdario.github.io/blog/2014/06/07/tabs-vs-spaces/"/>
-    <updated>2014-06-07T21:52:00+02:00</updated>
+    <updated>2014-06-07T21:52:00-07:00</updated>
     <id>http://berdario.github.io/blog/2014/06/07/tabs-vs-spaces</id>
     <content type="html"><![CDATA[<p>Historically I&rsquo;ve been one of the few people who consistently preferred to use Tabs over Space (I&rsquo;m obviously talking about the characters: 0x9 against 0x20).</p>
 
