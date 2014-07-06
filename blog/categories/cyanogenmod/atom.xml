@@ -1,108 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html class="maskImage">
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>Let down by Google's Android - Dario's coredump</title>
-  <meta name="author" content="Dario Bertini">
-
-  
-  <meta name="description" content="Originally I wanted to write another post, akin to &ldquo;Cyanogenmod is a ghetto&rdquo;. In fact I wasn&rsquo;t really fond of that project and, &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://berdario.github.io/blog/2013/12/24/let-down-by-googles-android">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="Dario's coredump" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-41810607-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
-
-</head>
-
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Dario's coredump</a></h1>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:berdario.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <!-- <li><a href="/">Blog</a></li> -->
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/about/">About</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
-  
-  <header>
+  <title><![CDATA[Category: cyanogenmod | Dario's coredump]]></title>
+  <link href="http://berdario.github.io/blog/categories/cyanogenmod/atom.xml" rel="self"/>
+  <link href="http://berdario.github.io/"/>
+  <updated>2014-07-05T18:37:42-07:00</updated>
+  <id>http://berdario.github.io/</id>
+  <author>
+    <name><![CDATA[Dario Bertini]]></name>
     
-      <h1 class="entry-title">Let Down by Google's Android</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
-
-
-<time datetime="2013-12-24T23:56:00-08:00" pubdate data-updated="true">2013 December 24<span>th</span></time>
-        
-      </p>
-    
-  </header>
-
-
-<div class="entry-content"><p>Originally I wanted to write another post, akin to &ldquo;Cyanogenmod is a ghetto&rdquo;. In fact I wasn&rsquo;t really fond of that project and, until now, with my android phone (a Nexus S) I chose to stick to the stock android version (I experienced cyanogenmod and others aftermarket mods with my previous phone: an HTC Dream, the very first android device).</p>
+  <entry>
+    <title type="html"><![CDATA[Let down by Google's Android]]></title>
+    <link href="http://berdario.github.io/blog/2013/12/24/let-down-by-googles-android/"/>
+    <updated>2013-12-24T23:56:00-08:00</updated>
+    <id>http://berdario.github.io/blog/2013/12/24/let-down-by-googles-android</id>
+    <content type="html"><![CDATA[<p>Originally I wanted to write another post, akin to &ldquo;Cyanogenmod is a ghetto&rdquo;. In fact I wasn&rsquo;t really fond of that project and, until now, with my android phone (a Nexus S) I chose to stick to the stock android version (I experienced cyanogenmod and others aftermarket mods with my previous phone: an HTC Dream, the very first android device).</p>
 
 <p>I never really liked the xda-developers forums either: a lot of OSS projects have their own forum, but for development a Mailing List (or similar) is preferred. The advantages are obvious: you get to reuse your identity (email), you don&rsquo;t have to deal with wonky cookie-based session authentication, you don&rsquo;t have to deal with bulky signatures/animated gifs/etc. (as long as you don&rsquo;t render html and/or enforce the netiquette) and everyone keeps a copy of the old discussions (thus, if the server and its backup disks get corrupted you won&rsquo;t completely lose your project history).</p>
 
@@ -150,7 +66,7 @@
 
 <p><strike>Unfortunately, it doesn&rsquo;t protect from this security hole at all. I have no clue why is that, but it&rsquo;s quite easy to reproduce: You just have to take an android package, decompile it and repackage it like <a href="http://blog.apkudo.com/2012/10/16/reverse-engineering-android-disassembling-hello-world/">this post</a> instructs you to do (it even has a link to an already-built HelloWorld apk, so you don&rsquo;t even have to write Java code to test it) and instead of rebuilding the apk straight away, follow the instructions as laid out in this <a href="https://gist.github.com/poliva/36b0795ab79ad6f14fd8">POC shell script</a> (or just execute it): </strike></p>
 
-<figure class='code'><figcaption><span> (android-apk-poc.sh)</span> <a href='/downloads/code/android-apk-poc.sh'>download</a></figcaption>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (android-apk-poc.sh)</span> <a href='/downloads/code/android-apk-poc.sh'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -215,8 +131,7 @@
 </span><span class='line'><span class="nb">cd</span> ..
 </span><span class='line'>rm -rf tmp out
 </span><span class='line'><span class="nb">echo</span> <span class="s2">&quot;Modified APK: evil-$APK&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><strike>Then, make sure that the Google Verification Tool is enabled (before 4.2 you have to open a separate application called Google Settings, you&rsquo;ll find a checkbox under Verify Apps) and you should find that your hacked apk installs just fine. (Actually, I got GVT to error on me when trying to install legitimate packages from F-Droid, so I&rsquo;m really skeptical about its real-world usefulness)</p>
 
@@ -256,139 +171,7 @@ Replacing open source applications with closed source ones. I felt it especially
 <p>I don&rsquo;t think of giving in completely to Google again. I just recognize that I feel it&rsquo;s more difficult to give up Google&rsquo;s Android than Microsoft&rsquo;s Windows. And just like it was for me and almost all the current Linux users, who started by dipping their toes in the Linux waters by dual-booting and only gradually letting their need for Windows wither, I think that the solution in this case would be to dual boot: Use a free mobile OS normally, and switch to the proprietary one only when you truly need it.</p>
 
 <p>Due to the always-connected nature of our modern mobile phones and the lack of solid dual boot solutions, I&rsquo;m afraid that the dual-boot will just take form as having 2 devices. At first I thought that having a separate tablet for games with the Google services might fill that role, but apps that require being on a mobile phone (like the alternative taxi-services and textsecure) make it a much less attractive proposition.</p>
-</div>
-
-
-  <footer>
-    <p class="meta">
-      
+]]></content>
+  </entry>
   
-
-<span class="byline author vcard">Posted by <span class="fn">Dario Bertini</span></span>
-
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-24T23:56:00-08:00" pubdate data-updated="true">2013 December 24<span>th</span></time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/android/'>android</a>, <a class='category' href='/blog/categories/cyanogenmod/'>cyanogenmod</a>, <a class='category' href='/blog/categories/open-source/'>open source</a>, <a class='category' href='/blog/categories/security/'>security</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  
-  
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2013/12/11/windows-disk-woes/" title="Previous Post: Windows disk woes">&laquo; Windows disk woes</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2014/01/17/the-fhs-is-crap/" title="Next Post: The FHS is crap">The FHS is crap &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
-
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-  </section>
-
-</div>
-
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2014/06/08/git/">Git</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/06/07/tabs-vs-spaces/">Tabs vs Spaces</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/19/the-last-time-i-used-kde/">The Last Time I Used KDE</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/17/the-fhs-is-crap/">The FHS Is Crap</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/24/let-down-by-googles-android/">Let Down by Google's Android</a>
-      </li>
-    
-  </ul>
-</section>
-
-
-
-
-
-  
-</aside>
-
-
-    </div>
-  </div>
-  <footer role="contentinfo"><script src="berdario.js" type="text/javascript"></script>
-<p>
-  Copyright &copy; 2014 - Dario Bertini -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-<script type="text/javascript">
-      var disqus_shortname = 'berdario';
-      
-        
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://berdario.github.io/blog/2013/12/24/let-down-by-googles-android/';
-        var disqus_url = 'http://berdario.github.io/blog/2013/12/24/let-down-by-googles-android/';
-        var disqus_script = 'embed.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
-
-
-
-
-
-
-
-
-
-
-
-</body>
-</html>
+</feed>
